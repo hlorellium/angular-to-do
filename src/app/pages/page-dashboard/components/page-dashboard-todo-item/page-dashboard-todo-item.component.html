@@ -1,0 +1,4 @@
+<div *ngIf="todoItem">
+  <input type="checkbox" [checked]="todoItem.isChecked" (change)="checkItem.emit()" />
+  <span appLogSomething>{{ todoItem.name | makeUppercase }}</span> - <span>{{ todoItem.description }}</span> - <span>{{ todoItem.timeCreated | date:'medium' }}</span>
+</div>
