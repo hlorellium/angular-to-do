@@ -1,0 +1,14 @@
+<div>
+  <form [formGroup]="form" class="form">
+    <div class="field">
+      <input type="text" formControlName="name" appNoNumbers [config]="{ color: 'yellow' }" />
+
+      <p *ngIf="form.controls['name'].getError('required')">This field is required.</p>
+      <p *ngIf="form.controls['name'].getError('minlength')">This field is should be more than 3 characters.</p>
+    </div>
+
+    <input type="text" formControlName="description" />
+  </form>
+
+  <button [disabled]="form.invalid" (click)="onSubmit()">Add item</button>
+</div>

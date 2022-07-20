@@ -1,6 +1,5 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
-import {PageDashboardModule} from "./pages/page-dashboard/page-dashboard.module";
 
 const routes: Routes = [
   {

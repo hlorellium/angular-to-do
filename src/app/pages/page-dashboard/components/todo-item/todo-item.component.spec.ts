@@ -1,18 +1,18 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { PageDashboardTodoItemComponent } from './page-dashboard-todo-item.component';
+import { TodoItemComponent } from './todo-item.component';
 
 describe('PageDashboardTodoItemComponent', () => {
-  let component: PageDashboardTodoItemComponent;
-  let fixture: ComponentFixture<PageDashboardTodoItemComponent>;
+  let component: TodoItemComponent;
+  let fixture: ComponentFixture<TodoItemComponent>;
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      declarations: [ PageDashboardTodoItemComponent ]
+      declarations: [ TodoItemComponent ]
     })
     .compileComponents();
 
-    fixture = TestBed.createComponent(PageDashboardTodoItemComponent);
+    fixture = TestBed.createComponent(TodoItemComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
   });

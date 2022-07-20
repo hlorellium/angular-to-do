@@ -1,24 +1,14 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { PageDashboardComponent } from './containers/page-dashboard/page-dashboard.component';
-import {PageDashboardRoutingModule} from "./page-dashboard-routing.module";
-import { PageDashboardTodoItemComponent } from './components/page-dashboard-todo-item/page-dashboard-todo-item.component';
-import {FormsModule, ReactiveFormsModule} from "@angular/forms";
-import {SharedModule} from "../../shared/shared.module";
-
-
+import { PageDashboardRoutingModule } from './page-dashboard-routing.module';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { SharedModule } from '../../shared/shared.module';
+import { AddItemFormComponent } from './components/add-item-form/add-item-form.component';
+import { TodoItemComponent } from './components/todo-item/todo-item.component';
 
 @NgModule({
-  declarations: [
-    PageDashboardComponent,
-    PageDashboardTodoItemComponent
-  ],
-  imports: [
-    CommonModule,
-    PageDashboardRoutingModule,
-    FormsModule,
-    ReactiveFormsModule,
-    SharedModule
-  ]
+  declarations: [PageDashboardComponent, TodoItemComponent, AddItemFormComponent],
+  imports: [CommonModule, PageDashboardRoutingModule, FormsModule, ReactiveFormsModule, SharedModule],
 })
-export class PageDashboardModule { }
+export class PageDashboardModule {}

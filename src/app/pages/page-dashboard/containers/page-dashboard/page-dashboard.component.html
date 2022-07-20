@@ -1,18 +1,5 @@
 <div class="container">
-  <div>
-    <form [formGroup]="form"  class="form">
-      <div class="field">
-        <input type="text" formControlName="name" appNoNumbers [config]="{color: 'yellow'}"/>
+  <app-add-item-form (submit)="onAddItem($event)"></app-add-item-form>
 
-        <p *ngIf="form.controls['name'].getError('required')">This field is required.</p>
-        <p *ngIf="form.controls['name'].getError('minlength')">This field is should be more than 3 characters.</p>
-      </div>
-
-      <input type="text" formControlName="description" />
-    </form>
-
-    <button [disabled]="form.invalid" (click)="onAddItem(form)">Add item</button>
-  </div>
-
-  <app-page-dashboard-todo-item *ngFor="let item of items" [todoItem]="item" (checkItem)="onCheckItem(item)"></app-page-dashboard-todo-item>
+  <app-todo-item *ngFor="let item of items" [todoItem]="item" (checkItem)="onCheckItem(item)"></app-todo-item>
 </div>
