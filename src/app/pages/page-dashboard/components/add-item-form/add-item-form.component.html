@@ -1,13 +1,22 @@
 <div>
   <form [formGroup]="form" class="form">
-    <div class="field">
+    <mat-form-field appearance="fill">
+      <mat-label>Name</mat-label>
+      <input type="text" matInput formControlName="name" placeholder="Some task" />
+      <mat-error *ngIf="form.get('name')?.hasError('required')"> Name is <strong>required</strong> </mat-error>
+    </mat-form-field>
+
+    <!-- <div class="field">
       <input type="text" formControlName="name" appNoNumbers [config]="{ color: 'yellow' }" />
 
       <p *ngIf="form.controls['name'].getError('required')">This field is required.</p>
       <p *ngIf="form.controls['name'].getError('minlength')">This field is should be more than 3 characters.</p>
-    </div>
+    </div> -->
 
-    <input type="text" formControlName="description" />
+    <mat-form-field appearance="fill">
+      <mat-label>Description</mat-label>
+      <input type="text" matInput formControlName="description" placeholder="Some task" />
+    </mat-form-field>
   </form>
 
   <button [disabled]="form.invalid" (click)="onSubmit()">Add item</button>

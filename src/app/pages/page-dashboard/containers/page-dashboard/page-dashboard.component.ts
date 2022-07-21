@@ -1,7 +1,9 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnDestroy, OnInit } from '@angular/core';
 import { TodoItem } from '../../models/todo-item';
 import { PageDashboardControllerService } from '../../services/controllers/page-dashboard-controller.service';
-import { FormBuilder, FormGroup, Validators } from '@angular/forms';
+import { FormGroup } from '@angular/forms';
+import { PageDashboardApiService } from '../../services/api/page-dashboard-api.service';
+import { Observable, Subscription } from 'rxjs';
 
 @Component({
   selector: 'app-page-dashboard',
@@ -12,7 +14,11 @@ import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 export class PageDashboardComponent implements OnInit {
   items: TodoItem[] = [];
 
-  constructor(private readonly pageDashboardControllerService: PageDashboardControllerService) {}
+  drinks$: Observable<string[]> = this.controller.drinks$;
+
+  filteredDrinks$ = this.controller.filteredDrinks$;
+
+  constructor(private readonly controller: PageDashboardControllerService, private readonly api: PageDashboardApiService) {}
 
   onCheckItem(todoItem: TodoItem): void {
     this.items = this.items.map(item => {
@@ -37,6 +43,6 @@ export class PageDashboardComponent implements OnInit {
   }
 
   ngOnInit() {
-    this.items = this.pageDashboardControllerService.getItems();
+    this.items = this.controller.getItems();
   }
 }

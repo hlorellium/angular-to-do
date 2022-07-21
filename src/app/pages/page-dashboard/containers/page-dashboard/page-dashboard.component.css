@@ -1,3 +1,7 @@
+:host {
+  background-color: rgb(184, 184, 184);
+}
+
 .form {
   display: flex;
   flex-direction: column;

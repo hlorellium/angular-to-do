@@ -10,8 +10,6 @@ const routes: Routes = [
         (m) => m.PageDashboardModule,
       ),
   },
-
-
 ];
 
 @NgModule({

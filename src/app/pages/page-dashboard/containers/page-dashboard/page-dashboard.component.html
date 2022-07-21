@@ -2,4 +2,14 @@
   <app-add-item-form (submit)="onAddItem($event)"></app-add-item-form>
 
   <app-todo-item *ngFor="let item of items" [todoItem]="item" (checkItem)="onCheckItem(item)"></app-todo-item>
+
+  <ng-container *ngIf="{ drinks: drinks$ | async, filteredDrinks: filteredDrinks$ | async } as state">
+    <ul>
+      <li *ngFor="let drink of state.drinks">{{ drink }}</li>
+    </ul>
+
+    <ul>
+      <li *ngFor="let drink of state.filteredDrinks">{{ drink }}</li>
+    </ul>
+  </ng-container>
 </div>
